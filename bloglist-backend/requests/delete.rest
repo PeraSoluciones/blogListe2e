@@ -1,0 +1,22 @@
+### Without authorization
+DELETE http://localhost:3003/api/blogs/66bf8dc168fd4518d17ab5c7
+
+### With malformatted token
+DELETE http://localhost:3003/api/blogs/66bf8dc168fd4518d17ab5c7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJtYXJ0aW4iLCJpZCI6IjY2YmMxZmI0MzZmNmEyYzc1OTYwYjc0MyIsImlhdCI6MTcyMzgyNzYyNH0.skjffsfsdfs
+
+### With correct authorization
+DELETE http://localhost:3003/api/blogs/66bf8dc168fd4518d17ab5c7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJtYXJ0aW4iLCJpZCI6IjY2YmMxZmI0MzZmNmEyYzc1OTYwYjc0MyIsImlhdCI6MTcyMzgyNzYyNH0.IDIRi_0kygtk4KZw3HPscB324BNqJjrt51F5exq9TDU
+
+### With incorrect user
+DELETE http://localhost:3003/api/blogs/66bd8267de12bd55a0d0b013
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJtYXJ0aW4iLCJpZCI6IjY2YmMxZmI0MzZmNmEyYzc1OTYwYjc0MyIsImlhdCI6MTcyMzgyNzYyNH0.IDIRi_0kygtk4KZw3HPscB324BNqJjrt51F5exq9TDU
+
+### With middleware for getting user - incorrect user
+DELETE http://localhost:3003/api/blogs/66bd8267de12bd55a0d0b013
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJtYXJ0aW4iLCJpZCI6IjY2YmMxZmI0MzZmNmEyYzc1OTYwYjc0MyIsImlhdCI6MTcyMzgyNzYyNH0.IDIRi_0kygtk4KZw3HPscB324BNqJjrt51F5exq9TDU
+
+### With middleware for getting user - correct user
+DELETE http://localhost:3003/api/blogs/66bd8267de12bd55a0d0b013
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1jaGFuIiwiaWQiOiI2NmJjMWY5NTM2ZjZhMmM3NTk2MGI3M2YiLCJpYXQiOjE3MjM4NDg0MjB9.3B_XJ1Nxp7FmMu-DvCmHN7pNP2B0RuMAUP6asC96HSI

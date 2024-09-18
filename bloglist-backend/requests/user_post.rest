@@ -1,0 +1,59 @@
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "username": "mchan",
+    "name": "Michael Chan",
+    "password": "mchan@123"
+}
+
+###
+
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "username": "edijkstra",
+    "name": "Edsger W. Dijkstra",
+    "password": "edijkstra@345"
+}
+
+###
+
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "username": "rmartin",
+    "name": "Robert C. Martin",
+    "password": "rmartin@789"
+}
+
+### No username
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "name": "Matti Luukkainen",
+    "password": "salainen"
+}
+
+### No password
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "username": "mluukkai",
+    "name": "Matti Luukkainen"
+}
+
+### Duplicate username
+
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "username": "rmartin",
+    "name": "Robert C. Martin",
+    "password": "rmartin@789"
+}
